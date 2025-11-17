@@ -13,5 +13,18 @@
     "guestName": "Shane Finkelstein",
     "listingName": "Shoreditch Heights",
     "channel": "Hostaway"
-  }
+  },
+  {
+  "id": 9999,
+  "type": "review",
+  "rating": 5,
+  "listingName": "Kensington Suite",
+  "guestName": "Mia Roberts",
+  "submittedAt": "2024-01-10",
+  "status": "published",
+  "publicReview": "Amazing apartment, super clean and spacious!",
+  "channel": "Hostaway",
+  "reviewCategory": ["cleanliness", "communication"]
+}
+
 ]
