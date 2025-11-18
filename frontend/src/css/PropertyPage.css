@@ -1,0 +1,150 @@
+/* ------------------------------------------------------
+   PAGE WRAPPER
+------------------------------------------------------ */
+.property-page {
+  min-height: 100vh;
+  padding: 40px 20px 60px;
+  background: #f7f8fa;
+  font-family: "Inter", sans-serif;
+}
+
+.property-inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 16px;
+}
+
+/* ------------------------------------------------------
+   COVER IMAGE
+------------------------------------------------------ */
+.property-cover {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  margin-bottom: 32px;
+}
+
+/* ------------------------------------------------------
+   HEADER TEXT
+------------------------------------------------------ */
+.property-header {
+  margin-bottom: 32px;
+}
+
+.property-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.property-subtitle {
+  font-size: 15px;
+  color: #64748b;
+}
+
+/* Property details row (location, guests, type, etc.) */
+.property-info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #475569;
+  margin: 6px 0 8px;
+}
+
+.info-item {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.info-dot {
+  color: #94a3b8;
+  font-size: 10px;
+  margin: 0 4px;
+}
+
+.info-dot::before {
+  content: "•";
+}
+
+/* ------------------------------------------------------
+   REVIEW LIST WRAPPER
+------------------------------------------------------ */
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ------------------------------------------------------
+   REVIEW CARD
+------------------------------------------------------ */
+.review-card {
+  background: #ffffff;
+  padding: 24px 28px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0px 4px 12px rgba(148,163,184,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 24px rgba(148,163,184,0.25);
+}
+
+/* ------------------------------------------------------
+   REVIEW CARD HEADER
+------------------------------------------------------ */
+.review-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.review-guest {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Rating stars */
+.review-rating {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1d4ed8; /* Flex Living blue */
+  letter-spacing: 1px;
+}
+
+/* ------------------------------------------------------
+   META INFO
+------------------------------------------------------ */
+.review-meta {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+/* ------------------------------------------------------
+   REVIEW CONTENT
+------------------------------------------------------ */
+.review-body {
+  font-size: 15px;
+  color: #334155;
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------
+   EMPTY STATE
+------------------------------------------------------ */
+.no-reviews {
+  color: #64748b;
+  margin-top: 20px;
+  font-size: 16px;
+  text-align: center;
+}

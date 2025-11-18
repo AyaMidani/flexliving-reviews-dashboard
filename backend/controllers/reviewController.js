@@ -67,5 +67,26 @@ const getApprovedReviews = async (req, res) => {
   }
 };
 
+const getApprovedReviewsMerged = (req, res) => {
+  try {
+    const reviewsPath = path.join(__dirname, "../mock/mockReviews.json");
+    const approvedPath = path.join(__dirname, "../approved/approvedReviews.json");
 
-module.exports = { getHostawayReviews , approveReview, getApprovedReviews };
+    // Load files
+    const allReviews = JSON.parse(fs.readFileSync(reviewsPath, "utf8"));
+    const approvedIDs = JSON.parse(fs.readFileSync(approvedPath, "utf8"));
+
+    // Filter only approved reviews
+    const approvedReviews = allReviews.filter((rev) =>
+      approvedIDs.includes(String(rev.id))
+    );
+
+    res.json({ success: true, reviews: approvedReviews });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ success: false, message: "Server Error" });
+  }
+};
+
+
+module.exports = { getHostawayReviews , approveReview, getApprovedReviews,getApprovedReviewsMerged };

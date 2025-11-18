@@ -3,7 +3,7 @@
     "id": 7453,
     "type": "host-to-guest",
     "status": "published",
-    "rating": null,
+    "rating": 4,
     "publicReview": "Shane and family are wonderful!",
     "reviewCategory": [
       { "category": "cleanliness", "rating": 10 },
@@ -23,6 +23,18 @@
   "submittedAt": "2024-01-10",
   "status": "published",
   "publicReview": "Amazing apartment, super clean and spacious!",
+  "channel": "Hostaway",
+  "reviewCategory": ["cleanliness", "communication"]
+},
+{
+  "id": 1234,
+  "type": "review",
+  "rating": 3,
+  "listingName": "Kensington Suite",
+  "guestName": "will Smith",
+  "submittedAt": "2024-03-10",
+  "status": "published",
+  "publicReview": "Cleaning is okay",
   "channel": "Hostaway",
   "reviewCategory": ["cleanliness", "communication"]
 }
