@@ -1,113 +1,81 @@
-⭐ FlexLiving Reviews Dashboard
+# ⭐ FlexLiving Reviews Dashboard
+A full-stack system for managing, filtering, approving, and displaying guest reviews for FlexLiving properties. Includes a **React + Vite frontend** and a **Node.js/Express backend** with persistent JSON storage for approved reviews.
 
-A full-stack system for managing, filtering, approving, and displaying guest reviews for FlexLiving properties.
-Includes a React + Vite frontend and a Node.js/Express backend with persistent storage for approved reviews.
+---
 
-✨ Features
-🖥️ Admin Dashboard
+## ✨ Features
+### 🖥️ Admin Dashboard
+- View all imported guest reviews
+- Filter reviews by:
+  - Listing name
+  - Star rating
+  - Newest / Oldest date
+- Approve reviews with a single click
+- Approved reviews are saved persistently (JSON file)
+- Clean, responsive UI
 
-View all imported guest reviews
+### 🌍 Public Property Page
+- Shows only approved reviews
+- Displays average rating
+- Shows:
+  - Guest name
+  - Listing
+  - Date
+  - Rating
+  - Review text
 
-Filter reviews by:
+---
 
-Listing name
+## 🏗️ Tech Stack
+### Frontend
+- React + Vite
+- Axios
+- Custom CSS
 
-Star rating
+### Backend
+- Node.js + Express
+- CORS
+- JSON file storage
+- Review normalization logic
 
-Newest / Oldest date
+---
 
-Approve reviews with a single click
+## 📂 Project Structure
+backend/  
+  controllers/  
+  routes/  
+  mock/  
+  approved/  
+  server.js  
 
-Approved reviews are saved persistently (JSON file)
+frontend/  
+  src/  
+    components/  
+    pages/  
+    utils/  
+    css/  
+  App.jsx  
+  main.jsx  
 
-Modern, responsive UI
+---
 
-🌍 Public Property Page
+## 🔧 Installation
+git clone https://github.com/AyaMidani/flexliving-reviews-dashboard.git  
+cd flexliving-reviews-dashboard  
 
-Shows only approved reviews
+---
 
-Displays average rating
+## ▶️ Running the Project
+### Backend
+cd backend  
+npm install  
+npm start  
 
-Includes:
+Backend runs on: http://localhost:5001
 
-Guest name
+### Frontend
+cd frontend  
+npm install  
+npm run dev  
 
-Listing
-
-Date
-
-Rating
-
-Review text
-
-🏗️ Tech Stack
-Frontend
-
-⚛️ React + Vite
-
-🎨 Custom CSS
-
-🔗 Axios
-
-Backend
-
-🟢 Node.js + Express
-
-🔄 CORS
-
-📁 JSON file storage
-
-🔧 Normalization & filtering logic
-
-📂 Project Structure
-flexliving-reviews-dashboard/
-│
-├── backend/
-│   ├── controllers/
-│   ├── routes/
-│   ├── mock/
-│   ├── approved/
-│   └── server.js
-│
-└── frontend/
-    ├── src/
-    │   ├── components/
-    │   ├── pages/
-    │   ├── utils/
-    │   └── css/
-    ├── App.jsx
-    └── main.jsx
-
-🔧 Installation
-
-Clone the repository:
-
-git clone https://github.com/AyaMidani/flexliving-reviews-dashboard.git
-cd flexliving-reviews-dashboard
-
-▶️ Running the Project
-Backend
-cd backend
-npm install
-npm start
-
-
-Server runs on:
-
-http://localhost:5001
-
-Frontend
-cd frontend
-npm install
-npm run dev
-
-
-Visit:
-
-http://localhost:5173
-
-🔑 Environment Variables
-
-Create /frontend/.env:
-
-VITE_API_URL=http://localhost:5001/api
+Frontend runs on: http://localhost:5173
