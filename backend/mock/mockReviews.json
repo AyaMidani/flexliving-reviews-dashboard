@@ -15,28 +15,115 @@
     "channel": "Hostaway"
   },
   {
-  "id": 9999,
-  "type": "review",
-  "rating": 5,
-  "listingName": "Kensington Suite",
-  "guestName": "Mia Roberts",
-  "submittedAt": "2024-01-10",
-  "status": "published",
-  "publicReview": "Amazing apartment, super clean and spacious!",
-  "channel": "Hostaway",
-  "reviewCategory": ["cleanliness", "communication"]
-},
-{
-  "id": 1234,
-  "type": "review",
-  "rating": 3,
-  "listingName": "Kensington Suite",
-  "guestName": "will Smith",
-  "submittedAt": "2024-03-10",
-  "status": "published",
-  "publicReview": "Cleaning is okay",
-  "channel": "Hostaway",
-  "reviewCategory": ["cleanliness", "communication"]
-}
+    "id": 9999,
+    "type": "review",
+    "rating": 5,
+    "listingName": "Kensington Suite",
+    "guestName": "Mia Roberts",
+    "submittedAt": "2024-01-10",
+    "status": "published",
+    "publicReview": "Amazing apartment, super clean and spacious!",
+    "channel": "Hostaway",
+    "reviewCategory": ["cleanliness", "communication"]
+  },
+  {
+    "id": 1234,
+    "type": "review",
+    "rating": 3,
+    "listingName": "Kensington Suite",
+    "guestName": "Will Smith",
+    "submittedAt": "2024-03-10",
+    "status": "published",
+    "publicReview": "Cleaning is okay.",
+    "channel": "Hostaway",
+    "reviewCategory": ["cleanliness", "communication"]
+  },
 
+  {
+    "id": 5632,
+    "type": "review",
+    "rating": 5,
+    "listingName": "Paddington Loft",
+    "guestName": "Laura Thompson",
+    "submittedAt": "2023-11-18",
+    "status": "published",
+    "publicReview": "Absolutely loved my stay! Stylish interior and very comfortable.",
+    "channel": "Booking.com",
+    "reviewCategory": [
+      { "category": "cleanliness", "rating": 9 },
+      { "category": "communication", "rating": 10 }
+    ]
+  },
+  {
+    "id": 8841,
+    "type": "review",
+    "rating": 4,
+    "listingName": "Waterloo City Flat",
+    "guestName": "James Turner",
+    "submittedAt": "2023-12-05",
+    "status": "published",
+    "publicReview": "Great location and easy check-in. The kitchen could be better equipped.",
+    "channel": "Airbnb",
+    "reviewCategory": [
+      { "category": "cleanliness", "rating": 8 },
+      { "category": "communication", "rating": 9 }
+    ]
+  },
+  {
+    "id": 7723,
+    "type": "review",
+    "rating": 5,
+    "listingName": "Shoreditch Heights",
+    "guestName": "Olivia Green",
+    "submittedAt": "2024-02-02",
+    "status": "published",
+    "publicReview": "One of the best serviced apartments I have ever stayed in.",
+    "channel": "Hostaway",
+    "reviewCategory": ["cleanliness", "communication"]
+  },
+  {
+    "id": 6521,
+    "type": "review",
+    "rating": 2,
+    "listingName": "Kensington Suite",
+    "guestName": "Daniel Harper",
+    "submittedAt": "2023-09-20",
+    "status": "published",
+    "publicReview": "The apartment was okay but noise from the street kept me awake.",
+    "channel": "Airbnb",
+    "reviewCategory": [
+      { "category": "cleanliness", "rating": 6 },
+      { "category": "communication", "rating": 7 }
+    ]
+  },
+  {
+    "id": 9901,
+    "type": "review",
+    "rating": 4,
+    "listingName": "Canary Wharf Executive",
+    "guestName": "Hannah Lee",
+    "submittedAt": "2024-01-28",
+    "status": "published",
+    "publicReview": "Perfect for business trips. Fast WiFi and comfortable bed.",
+    "channel": "Booking.com",
+    "reviewCategory": [
+      { "category": "cleanliness", "rating": 9 },
+      { "category": "communication", "rating": 10 }
+    ]
+  },
+  {
+    "id": 3794,
+    "type": "review",
+    "rating": 5,
+    "listingName": "Notting Hill Garden Flat",
+    "guestName": "Alexandra Carter",
+    "submittedAt": "2024-02-15",
+    "status": "published",
+    "publicReview": "Beautiful location and super cozy. Highly recommended!",
+    "channel": "Hostaway",
+    "reviewCategory": [
+      { "category": "cleanliness", "rating": 10 },
+      { "category": "communication", "rating": 10 }
+    ]
+  }
 ]

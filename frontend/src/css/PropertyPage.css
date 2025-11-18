@@ -1,17 +1,104 @@
-/* ------------------------------------------------------
-   PAGE WRAPPER
------------------------------------------------------- */
-.property-page {
-  min-height: 100vh;
-  padding: 40px 20px 60px;
-  background: #f7f8fa;
-  font-family: "Inter", sans-serif;
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #F6EDE1; /* same cream as property-page */
 }
 
-.property-inner {
+/* ------------------------------------------------------
+   GLOBAL PAGE BACKGROUND
+------------------------------------------------------ */
+.property-page {
+  background: #F6EDE1;
+  min-height: 100vh;
+  font-family: Inter, sans-serif;
+  padding: 0 0 40px;
+}
+
+.property-section {
   max-width: 1100px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* ------------------------------------------------------
+   FLEX NAVBAR
+------------------------------------------------------ */
+.flex-header {
+  background: #23423D;
+  width: 100%;
+}
+
+.flex-header-inner {
+  max-width: 1300px;
   margin: auto;
-  padding: 0 16px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.flex-logo {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.flex-nav {
+  display: flex;
+  gap: 40px;
+  font-size: 15px;
+}
+
+.flex-nav span {
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity .2s;
+}
+
+.flex-nav span:hover {
+  opacity: 1;
+}
+
+/* ---------- MOBILE NAV FIX ---------- */
+@media (max-width: 768px) {
+  .flex-header-inner {
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px 0;
+    text-align: center;
+  }
+
+  .flex-nav {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .flex-nav span {
+    padding: 6px 0;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flex-logo {
+    font-size: 20px;
+  }
+
+  .flex-nav span {
+    font-size: 15px;
+  }
+}
+
+/* ------------------------------------------------------
+   MAIN SECTION
+------------------------------------------------------ */
+.property-section {
+  max-width: 1100px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+  text-align: center;
 }
 
 /* ------------------------------------------------------
@@ -19,132 +106,145 @@
 ------------------------------------------------------ */
 .property-cover {
   width: 100%;
-  height: 360px;
+  height: 420px;
   object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  margin-bottom: 32px;
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  margin-bottom: 40px;
 }
 
 /* ------------------------------------------------------
-   HEADER TEXT
+   HERO TEXT
 ------------------------------------------------------ */
-.property-header {
-  margin-bottom: 32px;
-}
-
 .property-title {
-  font-size: 32px;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 6px;
+  font-size: 46px;
+  font-weight: 800;
+  color: #0F1E29;
+  margin-bottom: 18px;
 }
 
-.property-subtitle {
-  font-size: 15px;
-  color: #64748b;
+.property-description {
+  font-size: 17px;
+  color: #5F6C72;
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.6;
+  margin-bottom: 14px;
 }
 
-/* Property details row (location, guests, type, etc.) */
+/* INFO ROW */
 .property-info-row {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: #23423D;
   font-size: 15px;
-  color: #475569;
-  margin: 6px 0 8px;
+  margin-bottom: 40px;
 }
 
 .info-item {
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.info-dot {
-  color: #94a3b8;
-  font-size: 10px;
-  margin: 0 4px;
+  font-weight: 600;
 }
 
 .info-dot::before {
   content: "•";
+  color: #808080;
 }
 
 /* ------------------------------------------------------
-   REVIEW LIST WRAPPER
+   REVIEWS TITLE
+------------------------------------------------------ */
+.section-subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0F1E29;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* ------------------------------------------------------
+   REVIEW LIST
 ------------------------------------------------------ */
 .review-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 22px;
 }
 
 /* ------------------------------------------------------
    REVIEW CARD
 ------------------------------------------------------ */
 .review-card {
-  background: #ffffff;
-  padding: 24px 28px;
-  border-radius: 16px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0px 4px 12px rgba(148,163,184,0.15);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: white;
+  padding: 26px 30px;
+  border-radius: 18px;
+  border: 1px solid #E2D9CE;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.10);
+  text-align: left;
+  transition: 0.2s;
 }
 
-/* Hover effect */
 .review-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0px 8px 24px rgba(148,163,184,0.25);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.18);
 }
 
-/* ------------------------------------------------------
-   REVIEW CARD HEADER
------------------------------------------------------- */
+/* Header */
 .review-header-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .review-guest {
   font-size: 18px;
-  font-weight: 600;
-  color: #0f172a;
+  font-weight: 700;
+  color: #0F1E29;
 }
 
-/* Rating stars */
 .review-rating {
   font-size: 18px;
   font-weight: 700;
-  color: #1d4ed8; /* Flex Living blue */
+  color: #FBBF24; /* warm yellow */
   letter-spacing: 1px;
+  text-shadow: 0 0 2px rgba(0,0,0,0.15);
 }
 
-/* ------------------------------------------------------
-   META INFO
------------------------------------------------------- */
+/* Meta */
 .review-meta {
   font-size: 14px;
-  color: #64748b;
+  color: #5F6C72;
   margin-bottom: 10px;
 }
 
-/* ------------------------------------------------------
-   REVIEW CONTENT
------------------------------------------------------- */
+/* Body */
 .review-body {
   font-size: 15px;
-  color: #334155;
+  color: #0F1E29;
   line-height: 1.6;
 }
 
-/* ------------------------------------------------------
-   EMPTY STATE
------------------------------------------------------- */
+/* Empty */
 .no-reviews {
-  color: #64748b;
-  margin-top: 20px;
-  font-size: 16px;
-  text-align: center;
+  color: #6E7A85;
+  margin-top: 30px;
+  font-size: 17px;
+}
+
+/* ------------------------------------------------------
+   RESPONSIVE CONTENT
+------------------------------------------------------ */
+@media (max-width: 768px) {
+  .property-title {
+    font-size: 34px;
+  }
+
+  .property-cover {
+    height: 260px;
+  }
+
+  .review-card {
+    padding: 20px;
+  }
 }

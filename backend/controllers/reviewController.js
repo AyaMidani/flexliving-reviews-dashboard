@@ -1,68 +1,88 @@
 const fs = require("fs");
 const path = require("path");
 
+const ensureFile = (filePath) => {
+  if (!fs.existsSync(filePath)) {
+    fs.writeFileSync(filePath, "[]");
+  }
+};
+
+const normalize = (item) => ({
+  id: item.id,
+  type: item.type,
+  rating: item.rating ?? null,
+  listingName: item.listingName,
+  guestName: item.guestName,
+  submittedAt: item.submittedAt,
+  status: item.status,
+  publicReview: item.publicReview,
+  channel: item.channel,
+  categories: item.reviewCategory || [],
+});
+
+
+
 const getHostawayReviews = async (req, res) => {
   try {
     const filePath = path.join(__dirname, "../mock/mockReviews.json");
+    ensureFile(filePath);
+
     const rawData = fs.readFileSync(filePath, "utf8");
     const reviews = JSON.parse(rawData);
 
-    const normalized = reviews.map((item) => ({
-      id: item.id,
-      type: item.type,
-      rating: item.rating,
-      listing: item.listingName,
-      guest: item.guestName,
-      date: item.submittedAt,
-      status: item.status,
-      publicReview: item.publicReview,
-      channel: item.channel,
-      categories: item.reviewCategory,
-    }));
+    const normalized = reviews.map(normalize);
 
-    res.json({ success: true, count: normalized.length, reviews: normalized });
+    // Sort newest → oldest
+    normalized.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    res.json({
+      success: true,
+      count: normalized.length,
+      reviews: normalized,
+    });
 
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).json({ success: false, message: "Server Error" });
   }
 };
 
+
 const approveReview = async (req, res) => {
   try {
-    const reviewId = req.params.id;  // which review to approve
+    const id = Number(req.params.id); 
+
     const filePath = path.join(__dirname, "../approved/approvedReviews.json");
+    ensureFile(filePath);
 
-    // Load existing approved reviews
-    let raw = fs.readFileSync(filePath, "utf8");
-    let approved = JSON.parse(raw);
+    const approved = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
-    // Add only if not already approved
-    if (!approved.includes(reviewId)) {
-      approved.push(reviewId);
+    if (!approved.includes(id)) {
+      approved.push(id);
     }
 
-    // Save back to the file
     fs.writeFileSync(filePath, JSON.stringify(approved, null, 2));
 
     res.json({ success: true, approved });
 
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).json({ success: false, message: "Server Error" });
   }
 };
 
+
 const getApprovedReviews = async (req, res) => {
   try {
     const filePath = path.join(__dirname, "../approved/approvedReviews.json");
-    let raw = fs.readFileSync(filePath, "utf8");
-    let approved = JSON.parse(raw);
+    ensureFile(filePath);
+
+    const approved = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
     res.json({ success: true, approved });
 
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).json({ success: false, message: "Server Error" });
   }
 };
@@ -72,21 +92,28 @@ const getApprovedReviewsMerged = (req, res) => {
     const reviewsPath = path.join(__dirname, "../mock/mockReviews.json");
     const approvedPath = path.join(__dirname, "../approved/approvedReviews.json");
 
-    // Load files
+    ensureFile(reviewsPath);
+    ensureFile(approvedPath);
+
     const allReviews = JSON.parse(fs.readFileSync(reviewsPath, "utf8"));
     const approvedIDs = JSON.parse(fs.readFileSync(approvedPath, "utf8"));
 
-    // Filter only approved reviews
-    const approvedReviews = allReviews.filter((rev) =>
-      approvedIDs.includes(String(rev.id))
-    );
+    const approvedReviews = allReviews
+      .filter((rev) => approvedIDs.map(Number).includes(Number(rev.id)))
+      .map(normalize);
 
     res.json({ success: true, reviews: approvedReviews });
+
   } catch (err) {
-    console.log(err);
+    console.error(err);
     res.status(500).json({ success: false, message: "Server Error" });
   }
 };
 
 
-module.exports = { getHostawayReviews , approveReview, getApprovedReviews,getApprovedReviewsMerged };
+module.exports = {
+  getHostawayReviews,
+  approveReview,
+  getApprovedReviews,
+  getApprovedReviewsMerged,
+};
