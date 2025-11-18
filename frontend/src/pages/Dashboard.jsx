@@ -140,7 +140,7 @@ const Dashboard = () => {
                   <td>{rev.rating ?? "N/A"}</td>
                   <td>{rev.publicReview}</td>
                   <td className="status-badge">
-                    {approvedList.includes(String(rev.id)) ? (
+                    {approvedList.includes(Number(rev.id)) ? (
                       <span className="status-approved">Yes</span>
                     ) : (
                       "No"
@@ -148,11 +148,11 @@ const Dashboard = () => {
                   </td>
                   <td>
                     <button
-                      disabled={approvedList.includes(String(rev.id))}
+                      disabled={approvedList.includes(Number(rev.id))}
                       className="approve-btn"
                       onClick={() => handleApprove(rev.id)}
                     >
-                      {approvedList.includes(String(rev.id)) ? "Approved" : "Approve"}
+                      {approvedList.includes(Number(rev.id)) ? "Approved" : "Approve"}
                     </button>
                   </td>
                 </tr>
