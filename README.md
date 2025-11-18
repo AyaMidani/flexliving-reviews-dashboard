@@ -1,14 +1,14 @@
 ⭐ FlexLiving Reviews Dashboard
 
-A full-stack dashboard for managing, filtering, approving, and displaying guest reviews for FlexLiving properties.
-The project includes a React frontend and a Node.js/Express backend that stores approved review IDs and normalizes review data.
+A full-stack system for managing, filtering, approving, and displaying guest reviews for FlexLiving properties.
+Includes a React + Vite frontend and a Node.js/Express backend with persistent storage for approved reviews.
 
 ✨ Features
-🖥️ Dashboard (Admin Side)
+🖥️ Admin Dashboard
 
-View all guest reviews
+View all imported guest reviews
 
-Filter by:
+Filter reviews by:
 
 Listing name
 
@@ -16,19 +16,19 @@ Star rating
 
 Newest / Oldest date
 
-Approve reviews with one click
+Approve reviews with a single click
 
 Approved reviews are saved persistently (JSON file)
 
-Clean, responsive UI
+Modern, responsive UI
 
-🌍 Public Page (Property Page)
+🌍 Public Property Page
 
-Displays only approved reviews
+Shows only approved reviews
 
-Shows average rating
+Displays average rating
 
-Displays:
+Includes:
 
 Guest name
 
@@ -57,27 +57,31 @@ Backend
 
 📁 JSON file storage
 
-🔧 Review normalization / filtering logic
+🔧 Normalization & filtering logic
 
 📂 Project Structure
-backend/
-  controllers/
-  routes/
-  mock/
-  approved/
-  server.js
-
-frontend/
-  src/
-    components/
-    pages/
-    utils/
-    css/
-  App.jsx
-  main.jsx
+flexliving-reviews-dashboard/
+│
+├── backend/
+│   ├── controllers/
+│   ├── routes/
+│   ├── mock/
+│   ├── approved/
+│   └── server.js
+│
+└── frontend/
+    ├── src/
+    │   ├── components/
+    │   ├── pages/
+    │   ├── utils/
+    │   └── css/
+    ├── App.jsx
+    └── main.jsx
 
 🔧 Installation
-Clone the repository
+
+Clone the repository:
+
 git clone https://github.com/AyaMidani/flexliving-reviews-dashboard.git
 cd flexliving-reviews-dashboard
 
@@ -104,6 +108,6 @@ http://localhost:5173
 
 🔑 Environment Variables
 
-Inside /frontend/.env:
+Create /frontend/.env:
 
 VITE_API_URL=http://localhost:5001/api
