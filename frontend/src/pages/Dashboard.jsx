@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../utils/api";
-import "../css/dashboard.css";
+import "../css/Dashboard.css";
 
 const normalizeReview = (rev) => ({
   ...rev,

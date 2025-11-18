@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../utils/api";
-import "../css/propertyPage.css";
+import "../css/PropertyPage.css";
 
 const PropertyPage = () => {
   const [reviews, setReviews] = useState([]);
